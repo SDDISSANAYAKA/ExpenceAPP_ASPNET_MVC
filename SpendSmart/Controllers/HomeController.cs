@@ -23,7 +23,8 @@ namespace SpendSmart.Controllers
 
         public IActionResult Expenses()
         {
-           return View();
+            var expenses = _context.Expenses.ToList();
+            return View(expenses);
         }
 
         public IActionResult CreateEditExpenses()
