@@ -11,12 +11,15 @@
 <div class="text-center">
     <h1 class="display-4">Expences</h1>
     <br />
+    <hr />
+    <h3>Total expenses $@ViewBag.Expenses</h3>
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Value</th>
                 <th>Description</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +29,10 @@
                     <td>@item.Id</td>
                     <td>@item.Value</td>
                     <td>@item.Description</td>
+                    <td>
+                        <a asp-action="CreateEditExpenses" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="DeleteExpenses" asp-route-id="@item.Id">Delete</a>
+                    </td>
                 </tr>
             }
         </tbody>
